@@ -24,8 +24,10 @@
 #include <string.h>
 
 /* zlib includes. */
-#include <zlib.h>
+#include <zlib/zlib.h>
+#if 0 // OPENWOW BEGIN
 #include <bzlib.h>
+#endif // OPENWOW END
 
 /* libmpq main includes. */
 #include "mpq.h"
@@ -41,7 +43,9 @@ static decompress_table_s dcmp_table[] = {
 	{LIBMPQ_COMPRESSION_HUFFMAN, libmpq__decompress_huffman},	/* decompression using huffman trees. */
 	{LIBMPQ_COMPRESSION_ZLIB, libmpq__decompress_zlib},	/* decompression with the zlib library. */
 	{LIBMPQ_COMPRESSION_PKZIP, libmpq__decompress_pkzip},	/* decompression with pkware data compression library. */
+#if 0 // OPENWOW BEGIN
 	{LIBMPQ_COMPRESSION_BZIP2, libmpq__decompress_bzip2},	/* decompression with bzip2 library. */
+#endif // OPENWOW END
 	{LIBMPQ_COMPRESSION_WAVE_MONO, libmpq__decompress_wave_mono},	/* decompression for mono waves. */
 	{LIBMPQ_COMPRESSION_WAVE_STEREO, libmpq__decompress_wave_stereo}	/* decompression for stereo waves. */
 };
@@ -187,6 +191,7 @@ int32_t libmpq__decompress_pkzip(uint8_t *in_buf, uint32_t in_size, uint8_t *out
 }
 
 /* this function decompress a stream using bzip2 library. */
+#if 0 // OPENWOW BEGIN
 int32_t libmpq__decompress_bzip2(uint8_t *in_buf, uint32_t in_size, uint8_t *out_buf, uint32_t out_size) {
 
 	/* some common variables. */
@@ -223,6 +228,7 @@ int32_t libmpq__decompress_bzip2(uint8_t *in_buf, uint32_t in_size, uint8_t *out
 	/* return transferred bytes. */
 	return tb;
 }
+#endif // OPENWOW END
 
 /* this function decompress a stream using wave algorithm. (1 channel) */
 int32_t libmpq__decompress_wave_mono(uint8_t *in_buf, uint32_t in_size, uint8_t *out_buf, uint32_t out_size) {

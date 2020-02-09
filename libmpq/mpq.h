@@ -62,8 +62,10 @@ typedef struct mpq_archive mpq_archive_s;
 /* file offset data type for API*/
 typedef int64_t libmpq__off_t;
 
+#if 0 // OPENWOW BEGIN
 /* generic information about library. */
 extern LIBMPQ_API const char *libmpq__version(void);
+#endif // OPENWOW END
 
 /* string error message for a libmpq return code. */
 extern LIBMPQ_API const char *libmpq__strerror(int32_t returncode);

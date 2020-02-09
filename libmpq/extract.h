@@ -25,7 +25,9 @@
 #define LIBMPQ_COMPRESSION_HUFFMAN		0x01		/* huffman compression. (used on wave files only and introduced in starcraft) */
 #define LIBMPQ_COMPRESSION_ZLIB			0x02		/* zlib compression. (introduced in warcraft 3) */
 #define LIBMPQ_COMPRESSION_PKZIP		0x08		/* pkware dcl compression. (first used compression algorithm) */
+#if 0 // OPENWOW BEGIN
 #define LIBMPQ_COMPRESSION_BZIP2		0x10		/* bzip compression. (introduced in warcraft 3 - the frozen throne) */
+#endif // OPENWOW END
 #define LIBMPQ_COMPRESSION_WAVE_MONO		0x40		/* adpcm 4:1 compression. (introduced in starcraft) */
 #define LIBMPQ_COMPRESSION_WAVE_STEREO		0x80		/* adpcm 4:1 compression. (introduced in starcraft) */
 
@@ -71,6 +73,7 @@ extern int32_t libmpq__decompress_pkzip(
 	uint32_t	out_size
 );
 
+#if 0 // OPENWOW BEGIN
 /* decompression using bzip2. */
 extern int32_t libmpq__decompress_bzip2(
 	uint8_t		*in_buf,
@@ -78,6 +81,7 @@ extern int32_t libmpq__decompress_bzip2(
 	uint8_t		*out_buf,
 	uint32_t	out_size
 );
+#endif // OPENWOW END
 
 /* decompression using wave. (1 channel) */
 extern int32_t libmpq__decompress_wave_mono(

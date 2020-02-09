@@ -18,8 +18,10 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#if 0 // OPENWOW BEGIN
 /* mpq-tools configuration includes. */
 #include "config.h"
+#endif
 
 /* libmpq main includes. */
 #include "mpq.h"
@@ -37,12 +39,14 @@
 /* support for platform specific things */
 #include "platform.h"
 
+#if 0 // OPENWOW BEGIN
 /* this function returns the library version information. */
 const char *libmpq__version(void) {
 
 	/* return version information. */
 	return VERSION;
 }
+#endif // OPENWOW END
 
 static const char *__libmpq_error_strings[] = {
 		"success",
