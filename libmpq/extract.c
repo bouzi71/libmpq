@@ -24,7 +24,7 @@
 #include <string.h>
 
 /* zlib includes. */
-#include <zlib/zlib.h>
+#include <zlib/source/zlib.h>
 #if 0 // OPENWOW BEGIN
 #include <bzlib.h>
 #endif // OPENWOW END
